@@ -7,10 +7,16 @@ import convert from "./utils/convert";
 
 const StyledDropBox = styled.div`
   padding: 2rem;
+  background: steelblue;
+  color: #fff;
+  font-size: 1.5rem;
   cursor: pointer;
   border: black 2px dotted;
+  transition: all 0.3s ease-in;
   &:hover {
     border: black 2px solid;
+    color: steelblue;
+    background: #fff;
   }
 `;
 
