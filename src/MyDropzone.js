@@ -42,7 +42,7 @@ function MyDropzone({ set }) {
   return (
     <StyledDropBox {...getRootProps()}>
       <input {...getInputProps()} />
-      <p>Drag 'n' drop some files here, or click to select files</p>
+      <p>Drag 'n Drop EGSOccupany Spreadsheet</p>
     </StyledDropBox>
   );
 }
