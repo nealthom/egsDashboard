@@ -13,7 +13,8 @@ export default (array) => {
       } else if (
         keys[j] === "Hour" ||
         keys[j] === "TotalInPlay" ||
-        keys[j] === "Machines"
+        keys[j] === "Machines" ||
+        keys[j] === "DOW"
       ) {
         newObj[keys[j]] = array[i][j];
       }

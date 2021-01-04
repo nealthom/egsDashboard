@@ -13,6 +13,7 @@ const StyledDropBox = styled.div`
   cursor: pointer;
   border: black 2px dotted;
   transition: all 0.3s ease-in;
+  margin-bottom: 1rem;
   &:hover {
     border: black 2px solid;
     color: steelblue;
