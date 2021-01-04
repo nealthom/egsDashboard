@@ -8,7 +8,7 @@ export default (array) => {
     for (let j = 0; j < keys.length; j++) {
       if (array[i][j] && j === 0) {
         // newObj[keys[j]] = array[i][j];
-        console.log(array[i][j]);
+
         newObj[keys[j]] = date2ms(array[i][j]);
       } else if (
         keys[j] === "Hour" ||
