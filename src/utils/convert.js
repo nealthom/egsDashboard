@@ -23,6 +23,7 @@ export default (array) => {
   }
   console.log(hours.shift());
   hours.pop();
+  hours.pop();
   array.pop();
   const max = array.pop()[MaxMachines];
 
