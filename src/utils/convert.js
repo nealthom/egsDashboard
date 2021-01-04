@@ -21,11 +21,14 @@ export default (array) => {
     }
     hours.push(newObj);
   }
-  console.log(hours.shift());
+  const tempDate = hours.shift();
+  const date = tempDate["Business Date"];
+  const maxPlayed = tempDate["TotalInPlay"];
+  console.log(maxPlayed);
   hours.pop();
   hours.pop();
   array.pop();
   const max = array.pop()[MaxMachines];
 
-  return { max, hours };
+  return { date, maxPlayed, max, hours };
 };
