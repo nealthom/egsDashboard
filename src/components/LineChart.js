@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
-
+import styled from "styled-components";
 import {
   select,
   line,
@@ -8,6 +8,13 @@ import {
   axisRight,
   scaleLinear
 } from "d3";
+
+const StyledSvg = styled.svg`
+  background: #eee;
+  overflow: visible;
+  margin-bottom: 2rem;
+  display: block;
+`;
 
 function LineChart() {
   const [data, setData] = useState([25, 30, 45, 60, 20, 65, 75]);
@@ -52,10 +59,10 @@ function LineChart() {
 
   return (
     <>
-      <svg ref={svgRef}>
+      <StyledSvg ref={svgRef}>
         <g className="x-axis" />
         <g className="y-axis" />
-      </svg>
+      </StyledSvg>
       <br />
       <br />
       <br />
