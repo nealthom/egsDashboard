@@ -7,6 +7,10 @@ import LineChart from "components/LineChart";
 const Container = styled.div`
   font-family: sans-serif;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
 
 // const ChartContainer = styled.div`
