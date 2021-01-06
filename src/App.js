@@ -3,7 +3,6 @@ import styled from "styled-components";
 import MyDropzone from "MyDropzone";
 
 import LineChart from "components/LineChart";
-import { Button } from "components/common";
 
 const Container = styled.div`
   font-family: sans-serif;
@@ -25,12 +24,8 @@ export default function App() {
     <Container>
       <h1>Spreadsheet</h1>
       <MyDropzone set={setData} />
-      {data ? JSON.stringify(data) : ""}
-      <ChartContainer>
-        <LineChart />
-        <Button>Update Data</Button>
-        <Button>Filter Data</Button>
-      </ChartContainer>
+      {data ? <LineChart data={data} /> : ""}
+      <ChartContainer></ChartContainer>
     </Container>
   );
 }
