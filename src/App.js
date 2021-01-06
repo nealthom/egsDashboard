@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import MyDropzone from "./MyDropzone";
+import MyDropzone from "MyDropzone";
 
-import LineChart from "./components/LineChart";
+import LineChart from "components/LineChart";
+import { Button } from "components/common";
 
 const Container = styled.div`
   font-family: sans-serif;
@@ -18,6 +19,8 @@ export default function App() {
       <MyDropzone set={setData} />
       {data ? JSON.stringify(data) : ""}
       <LineChart />
+      <Button>Update Data</Button>
+      <Button>Filter Data</Button>
     </Container>
   );
 }

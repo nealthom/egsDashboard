@@ -67,20 +67,6 @@ function LineChart() {
       <br />
       <br />
       <br />
-      <button
-        onClick={() => setData([...data, Math.ceil(Math.random() * 100)])}
-      >
-        Update data
-      </button>
-      <button
-        onClick={() =>
-          setData(
-            data.filter((value) => value > Math.ceil(Math.random() * 100))
-          )
-        }
-      >
-        Filter data
-      </button>
     </>
   );
 }
