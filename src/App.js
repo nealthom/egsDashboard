@@ -25,7 +25,6 @@ export default function App() {
       <h1>Spreadsheet</h1>
       <MyDropzone set={setData} />
       {data ? <LineChart input={data} /> : ""}
-      <ChartContainer></ChartContainer>
     </Container>
   );
 }

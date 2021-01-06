@@ -17,13 +17,13 @@ const StyledSvg = styled.svg`
 `;
 
 function LineChart({ input }) {
-  const [data, setData] = useState(input.hours);
+  const [data, setData] = useState([]);
   const maxSize = 1533;
   const svgRef = useRef();
-  console.log(input.hours);
 
   // will be called initially and on every data change
   useEffect(() => {
+    setData(input.hours);
     const svg = select(svgRef.current);
 
     const xScale = scaleLinear()
@@ -57,7 +57,7 @@ function LineChart({ input }) {
       .attr("d", (value) => myLine(value.map((value) => value.TotalInPlay)))
       .attr("fill", "none")
       .attr("stroke", "blue");
-  }, [data]);
+  }, [data, input.hours]);
 
   return (
     <>
