@@ -16,9 +16,10 @@ const StyledSvg = styled.svg`
   display: block;
 `;
 
-function LineChart() {
+function LineChart({ input }) {
   const [data, setData] = useState([25, 30, 45, 60, 20, 65, 75]);
   const svgRef = useRef();
+  console.log(input.hours);
 
   // will be called initially and on every data change
   useEffect(() => {
