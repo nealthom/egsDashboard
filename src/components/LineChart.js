@@ -58,15 +58,15 @@ function LineChart({ input }) {
       .attr("class", "line")
       .attr("d", (value) => myLine(value.map((value) => value.TotalInPlay)))
       .attr("fill", "none")
-      .attr("stroke", "blue")
-      .on("mouseover", function (d, i) {
-        console.log("mouseover", d);
-        select(this).transition().attr("stroke", "red");
-      })
-      .on("mouseout", function (d, i) {
-        console.log("mouseover", d);
-        select(this).transition().attr("stroke", "blue");
-      });
+      .attr("stroke", "blue");
+    // .on("mouseover", function (d, i) {
+    //   console.log("mouseover", d);
+    //   select(this).transition().attr("stroke", "red");
+    // })
+    // .on("mouseout", function (d, i) {
+    //   console.log("mouseover", d);
+    //   select(this).transition().attr("stroke", "blue");
+    // });
   }, [data, input.hours]);
 
   return (
