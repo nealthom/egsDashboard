@@ -13,6 +13,20 @@ const Container = styled.div`
   justify-content: center;
 `;
 
+const ChartContainer = styled.div`
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  & > h2,
+  h3 {
+    margin: 0;
+    padding: 0.25rem;
+  }
+`;
+
 export default function App() {
   const [data, setData] = useState();
 
@@ -20,7 +34,15 @@ export default function App() {
     <Container>
       <h1>Spreadsheet</h1>
       <MyDropzone set={setData} />
-      {data ? <LineChart input={data} /> : ""}
+      {data ? (
+        <ChartContainer>
+          <h2>{data.dayOfWeek}</h2>
+          <h3>{`${data.date.month}/${data.date.day}/${data.date.year}`}</h3>
+          <LineChart input={data} />
+        </ChartContainer>
+      ) : (
+        ""
+      )}
     </Container>
   );
 }

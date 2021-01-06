@@ -22,7 +22,7 @@ function LineChart({ input }) {
   const [data, setData] = useState([]);
   const maxSize = 1533;
   const svgRef = useRef();
-
+  console.log(input);
   // will be called initially and on every data change
   useEffect(() => {
     setData(input.hours);
@@ -58,7 +58,13 @@ function LineChart({ input }) {
       .attr("class", "line")
       .attr("d", (value) => myLine(value.map((value) => value.TotalInPlay)))
       .attr("fill", "none")
-      .attr("stroke", "blue");
+      .attr("stroke", "blue")
+      .attr("xScale", function (d) {
+        return xScale(d.Hour);
+      })
+      .attr("yScale", function (d) {
+        return yScale(d.value);
+      });
     // .on("mouseover", function (d, i) {
     //   console.log("mouseover", d);
     //   select(this).transition().attr("stroke", "red");
