@@ -17,7 +17,8 @@ const StyledSvg = styled.svg`
 `;
 
 function LineChart({ input }) {
-  const [data, setData] = useState([25, 30, 45, 60, 20, 65, 75]);
+  const [data, setData] = useState(input.hours);
+  const maxSize = 1533;
   const svgRef = useRef();
   console.log(input.hours);
 
@@ -29,11 +30,11 @@ function LineChart({ input }) {
       .domain([0, data.length - 1])
       .range([0, 300]);
 
-    const yScale = scaleLinear().domain([0, 150]).range([150, 0]);
+    const yScale = scaleLinear().domain([0, maxSize]).range([150, 0]);
 
     const xAxis = axisBottom(xScale)
       .ticks(data.length)
-      .tickFormat((index) => index + 1);
+      .tickFormat((index) => index + 8);
 
     svg.select(".x-axis").style("transform", "translateY(150px)").call(xAxis);
 
@@ -53,7 +54,7 @@ function LineChart({ input }) {
       .data([data])
       .join("path")
       .attr("class", "line")
-      .attr("d", myLine)
+      .attr("d", (value) => myLine(value.map((value) => value.TotalInPlay)))
       .attr("fill", "none")
       .attr("stroke", "blue");
   }, [data]);
