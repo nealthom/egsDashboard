@@ -9,13 +9,13 @@ const Container = styled.div`
   text-align: center;
 `;
 
-const ChartContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-`;
+// const ChartContainer = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   height: 100vh;
+// `;
 
 export default function App() {
   const [data, setData] = useState();
