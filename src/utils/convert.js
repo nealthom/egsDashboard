@@ -28,7 +28,7 @@ export default (array) => {
 
   hours.pop();
   hours.pop();
-
+  array.pop();
   const max = array.pop()[MaxMachines];
 
   return { date, dayOfWeek, maxPlayed, max, hours };

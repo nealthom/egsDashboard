@@ -18,6 +18,7 @@ const ChartContainer = styled.div`
 `;
 
 export default function Chart({ data }) {
+  console.log(data);
   return (
     <ChartContainer>
       <h2>{data.dayOfWeek}</h2>
