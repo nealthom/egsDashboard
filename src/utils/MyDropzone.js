@@ -32,7 +32,6 @@ function MyDropzone({ set }) {
             console.log(err);
           } else {
             resp.rows.shift();
-
             const converted = convert(resp.rows);
             set(converted);
           }
