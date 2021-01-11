@@ -27,14 +27,11 @@ const ChartContainer = styled.div`
   }
 `;
 
-
-
 export default function Spreadsheet() {
   const [data, setData] = useState();
 
   return (
     <Container>
-      <h1>Spreadsheet</h1>
       <MyDropzone set={setData} />
       {data ? (
         <ChartContainer>
