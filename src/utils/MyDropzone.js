@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { ExcelRenderer } from "react-excel-renderer";
 import { useDropzone } from "react-dropzone";
 
-import convert from "./utils/convert";
+import convert from "./convert";
 
 const StyledDropBox = styled.div`
   padding: 2rem;
