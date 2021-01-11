@@ -21,6 +21,8 @@ const StyledDropBox = styled.div`
   }
 `;
 
+//Removes resp.column
+//that contain the column letters
 function MyDropzone({ set }) {
   const onDrop = useCallback(
     (acceptedFiles) => {
@@ -29,6 +31,7 @@ function MyDropzone({ set }) {
           if (err) {
             console.log(err);
           } else {
+            console.table(resp.rows);
             resp.rows.shift();
 
             const converted = convert(resp.rows);
