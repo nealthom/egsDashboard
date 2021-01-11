@@ -44,7 +44,7 @@ function MyDropzone({ set }) {
   return (
     <StyledDropBox {...getRootProps()}>
       <input {...getInputProps()} />
-      <p>Drag 'n Drop EGSOccupany Spreadsheet</p>
+      <p>Drag 'n Drop </p>
     </StyledDropBox>
   );
 }
