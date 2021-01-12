@@ -7,7 +7,7 @@ export default (array) => {
   let days = [];
   let hours = [];
   let businessDate = null;
-  let day = null;
+  let day = {};
   let convertedArray = []; //convert each row into an object
   for (let i = 0; i < array.length; i++) {
     let tempObj = {};
@@ -17,11 +17,20 @@ export default (array) => {
       }
     }
     if ("Business Date" in tempObj) {
-      console.log(tempObj);
+      if (businessDate) {
+        day.hours = hours;
+        hours = [];
+        days.push(day);
+        console.log(days);
+      } else {
+        businessDate = tempObj["Business Date"];
+      }
+      day = tempObj;
+    } else {
+      hours.push(tempObj);
     }
     convertedArray.push(tempObj);
   }
-  console.table(convertedArray);
 
   return days;
 };
