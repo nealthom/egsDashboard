@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { ExcelRenderer } from "react-excel-renderer";
 import { useDropzone } from "react-dropzone";
 
-import convert from "./convert";
+
 
 const StyledDropBox = styled.div`
   padding: 2rem;
@@ -23,7 +23,7 @@ const StyledDropBox = styled.div`
 
 //Removes resp.column
 //that contain the column letters
-function MyDropzone({ set }) {
+function MyDropzone({ set, convert }) {
   const onDrop = useCallback(
     (acceptedFiles) => {
       acceptedFiles.forEach((file) => {
