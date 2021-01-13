@@ -77,7 +77,7 @@ function LineChart({ input }) {
 
   return (
     <>
-      <StyledSvg ref={svgRef}>
+      <StyledSvg ref={svgRef} id="vis">
         <g className="x-axis" />
         <g className="y-axis" />
       </StyledSvg>
