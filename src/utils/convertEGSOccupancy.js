@@ -2,7 +2,7 @@ import { date2ms } from "./date2ms";
 
 export default (array) => {
   const wantedKeys = ["Business Date", "TotalInPlay", "DOW", "Hour"];
-  const MaxMachines = 8;
+
   const keys = array.shift();
   let days = [];
   let hours = [];
