@@ -25,7 +25,7 @@ function LineChart({ input }) {
 
   // will be called initially and on every data change
   useEffect(() => {
-    setData(input.hours);
+    setData(input);
     const svg = select(svgRef.current);
 
     const xScale = scaleLinear()
@@ -73,7 +73,7 @@ function LineChart({ input }) {
     //   console.log("mouseover", d);
     //   select(this).transition().attr("stroke", "blue");
     // });
-  }, [data, input.hours]);
+  }, [data, input]);
 
   return (
     <>

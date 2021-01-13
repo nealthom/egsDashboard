@@ -21,7 +21,6 @@ export default (array) => {
         day.hours = hours;
         hours = [];
         days.push(day);
-        console.log(days);
       } else {
         businessDate = tempObj["Business Date"];
       }

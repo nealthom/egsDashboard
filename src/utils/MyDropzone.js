@@ -3,8 +3,6 @@ import styled from "styled-components";
 import { ExcelRenderer } from "react-excel-renderer";
 import { useDropzone } from "react-dropzone";
 
-
-
 const StyledDropBox = styled.div`
   padding: 2rem;
   background: steelblue;
@@ -38,7 +36,7 @@ function MyDropzone({ set, convert }) {
         });
       });
     },
-    [set]
+    [set, convert]
   );
   const { getRootProps, getInputProps } = useDropzone({ onDrop });
 

@@ -18,12 +18,17 @@ const ChartContainer = styled.div`
 `;
 
 export default function Chart({ data }) {
+  let combinedHours = [];
+
+  data.forEach((day) => combinedHours.push(...day.hours));
+
   return (
     <ChartContainer>
       {/* <h2>{data.dayOfWeek}</h2>
       <h3>{`${data.date.month}/${data.date.day}/${data.date.year}`}</h3>
       <h5>{data.maxPlayed}</h5> */}
-      <LineChart input={data} />
+
+      <LineChart input={combinedHours} />
     </ChartContainer>
   );
 }
