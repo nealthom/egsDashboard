@@ -55,21 +55,20 @@ function LineChart({ input }) {
     // renders path element, and attaches
     // the "d" attribute from line generator above
 
-    data &&
-      svg
-        .selectAll(".line")
-        .data([data])
-        .join("path")
-        .attr("class", "line")
-        .attr("d", (value) => myLine(value.map((value) => value.TotalInPlay)))
-        .attr("fill", "none")
-        .attr("stroke", "blue")
-        .attr("xScale", function (d) {
-          return xScale(d.Hour);
-        })
-        .attr("yScale", function (d) {
-          return yScale(d.value);
-        });
+    svg
+      .selectAll(".line")
+      .data([data])
+      .join("path")
+      .attr("class", "line")
+      .attr("d", (value) => myLine(value.map((value) => value.TotalInPlay)))
+      .attr("fill", "none")
+      .attr("stroke", "blue")
+      .attr("xScale", function (d) {
+        return xScale(d.Hour);
+      })
+      .attr("yScale", function (d) {
+        return yScale(d.value);
+      });
     // .on("mouseover", function (d, i) {
     //   console.log("mouseover", d);
     //   select(this).transition().attr("stroke", "red");
