@@ -28,7 +28,7 @@ export default function Chart({ data }) {
       <h3>{`${data.date.month}/${data.date.day}/${data.date.year}`}</h3>
       <h5>{data.maxPlayed}</h5> */}
 
-      <LineChart input={data[0].hours} />
+      <LineChart input={data} />
     </ChartContainer>
   );
 }

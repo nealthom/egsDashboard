@@ -22,10 +22,13 @@ function LineChart({ input }) {
   const [data, setData] = useState([]);
   const maxSize = 1533;
   const svgRef = useRef();
+  let index = 0;
 
   // will be called initially and on every data change
   useEffect(() => {
-    setData(input);
+    setData(input[index].hours);
+    console.log("Input", ...input[0].hours);
+    console.log("Data", data);
     const svg = select(svgRef.current);
 
     const xScale = scaleLinear()
@@ -51,20 +54,22 @@ function LineChart({ input }) {
 
     // renders path element, and attaches
     // the "d" attribute from line generator above
-    svg
-      .selectAll(".line")
-      .data([data])
-      .join("path")
-      .attr("class", "line")
-      .attr("d", (value) => myLine(value.map((value) => value.TotalInPlay)))
-      .attr("fill", "none")
-      .attr("stroke", "blue")
-      .attr("xScale", function (d) {
-        return xScale(d.Hour);
-      })
-      .attr("yScale", function (d) {
-        return yScale(d.value);
-      });
+
+    data &&
+      svg
+        .selectAll(".line")
+        .data([data])
+        .join("path")
+        .attr("class", "line")
+        .attr("d", (value) => myLine(value.map((value) => value.TotalInPlay)))
+        .attr("fill", "none")
+        .attr("stroke", "blue")
+        .attr("xScale", function (d) {
+          return xScale(d.Hour);
+        })
+        .attr("yScale", function (d) {
+          return yScale(d.value);
+        });
     // .on("mouseover", function (d, i) {
     //   console.log("mouseover", d);
     //   select(this).transition().attr("stroke", "red");
@@ -73,7 +78,8 @@ function LineChart({ input }) {
     //   console.log("mouseover", d);
     //   select(this).transition().attr("stroke", "blue");
     // });
-  }, [data, input]);
+    if (index <= index.length) index++;
+  }, [index, data, input]);
 
   return (
     <>
