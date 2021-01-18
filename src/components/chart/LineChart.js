@@ -23,7 +23,7 @@ function LineChart({ input }) {
   const maxSize = 1533;
   const svgRef = useRef();
   let index = 0;
-
+  console.log("input: ", input);
   // will be called initially and on every data change
   useEffect(() => {
     setData(input[index].hours);
@@ -69,14 +69,7 @@ function LineChart({ input }) {
       .attr("yScale", function (d) {
         return yScale(d.value);
       });
-    // .on("mouseover", function (d, i) {
-    //   console.log("mouseover", d);
-    //   select(this).transition().attr("stroke", "red");
-    // })
-    // .on("mouseout", function (d, i) {
-    //   console.log("mouseover", d);
-    //   select(this).transition().attr("stroke", "blue");
-    // });
+
     if (index <= index.length) index++;
   }, [index, data, input]);
 
