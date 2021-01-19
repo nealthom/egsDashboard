@@ -6,10 +6,8 @@ import LineChart from "./LineChart";
 const ChartContainer = styled.div`
   text-align: center;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
+  flex-wrap: wrap;
+  margin: 6px;
   & > h2,
   h3 {
     margin: 0;
@@ -18,17 +16,15 @@ const ChartContainer = styled.div`
 `;
 
 export default function Chart({ data }) {
-  let combinedHours = [];
-
-  data.forEach((day) => combinedHours.push(...day.hours));
-  console.log(data);
   return (
     <ChartContainer>
       {/* <h2>{data.dayOfWeek}</h2>
       <h3>{`${data.date.month}/${data.date.day}/${data.date.year}`}</h3>
       <h5>{data.maxPlayed}</h5> */}
 
-      <LineChart input={data} />
+      {data.map((day) => {
+        return <LineChart key={day["Business Date"]} input={day.hours} />;
+      })}
     </ChartContainer>
   );
 }
