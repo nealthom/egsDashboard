@@ -22,7 +22,7 @@ function LineChart({ input }) {
   const [data, setData] = useState([]);
   const maxSize = 1533;
   const svgRef = useRef();
-
+  console.log(input);
   // will be called initially and on every data change
   useEffect(() => {
     const svg = select(svgRef.current);
