@@ -27,7 +27,7 @@ function LineChart({ input }) {
   useEffect(() => {
     const svg = select(svgRef.current);
 
-    setData(input);
+    setData(input.hours);
     const xScale = scaleLinear()
       .domain([0, data.length - 1])
       .range([0, 300]);
@@ -66,6 +66,15 @@ function LineChart({ input }) {
       .attr("yScale", function (d) {
         return yScale(d.value);
       });
+
+    svg
+      .append("text")
+      .attr("x", 300 / 2)
+      .attr("y", 0 - "2rem" / 2)
+      .attr("text-anchor", "middle")
+      .style("font-size", "16px")
+      .style("text-decoration", "underline")
+      .text(`${input.DOW}`);
   }, [data, input]);
 
   return (

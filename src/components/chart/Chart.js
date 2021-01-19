@@ -23,7 +23,7 @@ export default function Chart({ data }) {
       <h5>{data.maxPlayed}</h5> */}
 
       {data.map((day) => {
-        return <LineChart key={day["Business Date"]} input={day.hours} />;
+        return <LineChart key={day["Business Date"]} input={day} />;
       })}
     </ChartContainer>
   );
