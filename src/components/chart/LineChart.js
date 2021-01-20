@@ -9,6 +9,8 @@ import {
   scaleLinear
 } from "d3";
 
+import { date2ms } from "utils/date2ms";
+
 const StyledSvg = styled.svg`
   background: #eee;
   overflow: visible;
@@ -22,7 +24,8 @@ function LineChart({ input }) {
   const [data, setData] = useState([]);
   const maxSize = 1533;
   const svgRef = useRef();
-  console.log(input);
+  const date = date2ms(input["Business Date"]);
+  console.log(date);
   // will be called initially and on every data change
   useEffect(() => {
     const svg = select(svgRef.current);
@@ -74,8 +77,8 @@ function LineChart({ input }) {
       .attr("text-anchor", "middle")
       .style("font-size", "16px")
       .style("text-decoration", "underline")
-      .text(`${input.DOW}`);
-  }, [data, input]);
+      .text(`${input.DOW} ${date.month}/${date.day}/${date.year}`);
+  }, [input.hours, input.DOW, data, date.month, date.day, date.year]);
 
   return (
     <>

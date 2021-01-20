@@ -1,5 +1,3 @@
-import { date2ms } from "./date2ms";
-
 export default (array) => {
   const wantedKeys = ["Business Date", "TotalInPlay", "DOW", "Hour"];
 
