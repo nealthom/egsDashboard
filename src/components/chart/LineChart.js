@@ -25,7 +25,7 @@ function LineChart({ input }) {
   const maxSize = 1533;
   const svgRef = useRef();
   const date = date2ms(input["Business Date"]);
-  console.log(date);
+  console.log(input.TotalInPlay);
   // will be called initially and on every data change
   useEffect(() => {
     const svg = select(svgRef.current);
@@ -72,13 +72,31 @@ function LineChart({ input }) {
 
     svg
       .append("text")
-      .attr("x", 300 / 2)
+      .attr("x", "6rem")
       .attr("y", 0 - "2rem" / 2)
       .attr("text-anchor", "middle")
       .style("font-size", "16px")
       .style("text-decoration", "underline")
       .text(`${input.DOW} ${date.month}/${date.day}/${date.year}`);
-  }, [input.hours, input.DOW, data, date.month, date.day, date.year]);
+
+    svg
+      .append("text")
+      .attr("x", 300 - 80)
+      .attr("y", 0)
+      .attr("text-anchor", "right")
+      .style("fill", "darkOrange")
+      .style("font-size", "16px")
+      .style("text-decoration", "underline")
+      .text(`Max: ${input.TotalInPlay} `);
+  }, [
+    input.hours,
+    input.DOW,
+    data,
+    date.month,
+    date.day,
+    date.year,
+    input.TotalInPlay
+  ]);
 
   return (
     <>
