@@ -25,7 +25,7 @@ function LineChart({ input }) {
   const maxSize = 1533;
   const svgRef = useRef();
   const date = date2ms(input["Business Date"]);
-  console.log(input.TotalInPlay);
+  // console.log(input.TotalInPlay);
   // will be called initially and on every data change
   useEffect(() => {
     const svg = select(svgRef.current);

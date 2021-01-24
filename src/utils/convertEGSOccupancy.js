@@ -6,7 +6,7 @@ export default (array) => {
   let hours = [];
   let businessDate = null;
   let day = {};
-  let convertedArray = []; //convert each row into an object
+  let maxDays = [];
   for (let i = 0; i < array.length; i++) {
     let tempObj = {};
     for (let j = 0; j < keys.length; j++) {
@@ -23,11 +23,17 @@ export default (array) => {
         businessDate = tempObj["Business Date"];
       }
       day = tempObj;
+      console.log(day);
+      maxDays.push({
+        date: day["Business Date"],
+        totalInPlay: day.totalInPlay
+      });
     } else {
       hours.push(tempObj);
     }
-    convertedArray.push(tempObj);
-  }
 
+    // convertedArray.push(tempObj);
+  }
+  console.log(days);
   return days;
 };
